@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Events
+
+  Created by Willian Antunes on 28/12/19.
+  Copyright © 2019 Willian Antunes. All rights reserved.
+*/
+
+"Username" = "Usuário";
+"Password" = "Senha";
+"Events" = "Eventos";
+

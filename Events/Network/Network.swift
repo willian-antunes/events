@@ -63,4 +63,38 @@ class Network {
         }
         return isSuccessCode(urlResponse.statusCode)
     }
+
+    func post<T: Encodable>(urlString: String,
+                            body: T,
+                            headers: [String: String] = [:],
+                            errorHandler: @escaping ErrorHandler) {
+            let completionHandler: NetworkCompletionHandler = { (data, urlResponse, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    errorHandler(Network.genericError)
+                    return
+                }
+                if !self.isSuccessCode(urlResponse) {
+                    errorHandler(Network.genericError)
+                    return
+                }
+            }
+            guard let url = URL(string: urlString) else {
+                return errorHandler("Unable to create URL from given string")
+            }
+            var request = URLRequest(url: url)
+            request.timeoutInterval = 90
+            request.httpMethod = "POST"
+            request.allHTTPHeaderFields = headers
+            request.allHTTPHeaderFields?["Content-Type"] = "application/json"
+            guard let data = try? JSONEncoder().encode(body) else {
+                return errorHandler("Cannot encode given object into Data")
+            }
+            request.httpBody = data
+            URLSession.shared
+                .uploadTask(with: request,
+                            from: data,
+                            completionHandler: completionHandler)
+                .resume()
+        }
 }

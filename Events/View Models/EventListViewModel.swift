@@ -9,7 +9,7 @@
 import SwiftUI
 import Combine
 
-class EventViewModel: ObservableObject {
+class EventListViewModel: ObservableObject {
     
     let networkLayer = Network()
     
@@ -19,10 +19,10 @@ class EventViewModel: ObservableObject {
     func getEvents() {
         
         let successHandler: ([Event]) -> Void = { (response) in
-            for data in response {
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                self.events = []
+                for data in response {
                     self.isLoading = false
-                    self.objectWillChange.send()
                     self.events.append(EventViewData.init(event: data))
                 }
             }

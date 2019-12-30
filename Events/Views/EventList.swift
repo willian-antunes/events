@@ -10,12 +10,14 @@ import SwiftUI
 
 struct EventList: View {
     
-    @ObservedObject var viewModel: EventViewModel = EventViewModel()
+    @ObservedObject var viewModel: EventListViewModel = EventListViewModel()
     
     var body: some View {
-
+        
         List(viewModel.events) { event in
-            EventRow(event: event)
+            NavigationLink(destination: EventDetailView(eventId: event.id)) {
+                EventRow(event: event)
+            }
         }
         .navigationBarTitle("Events")
         .navigationBarBackButtonHidden(true)

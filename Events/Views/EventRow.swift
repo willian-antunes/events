@@ -16,8 +16,8 @@ struct EventRow: View {
         
         HStack {
             VStack(alignment: .leading, spacing: 16) {
-                Text(verbatim: event.title)
-                Text(verbatim: formattedDate)
+                Text(event.title)
+                Text(formattedDate)
             }
             Spacer()
             Text("$\(String(format: "%.2f", event.price))")

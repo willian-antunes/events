@@ -14,7 +14,9 @@ class EventListViewModel: ObservableObject {
     let networkLayer = Network()
     
     @Published private(set) var events = [EventViewData]()
-    @Published private(set) var isLoading = true
+    @Published var isLoading = true
+    @Published var error = false
+    @Published private(set) var errorMessage = ""
     
     func getEvents() {
         
@@ -22,14 +24,17 @@ class EventListViewModel: ObservableObject {
             DispatchQueue.main.async {
                 self.events = []
                 for data in response {
-                    self.isLoading = false
                     self.events.append(EventViewData.init(event: data))
                 }
+                self.isLoading = false
             }
         }
         
         let errorHandler: (String) -> Void = { (error) in
-            print(error)
+            DispatchQueue.main.async {
+                self.error = true
+                self.errorMessage = error
+            }
         }
         
         networkLayer.get(urlString: "https://5b840ba5db24a100142dcd8c.mockapi.io/api/events", successHandler: successHandler, errorHandler: errorHandler)

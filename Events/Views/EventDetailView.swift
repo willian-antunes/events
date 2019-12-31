@@ -13,7 +13,6 @@ struct EventDetailView: View {
     
     @ObservedObject var viewModel: EventDetailViewModel = EventDetailViewModel()
     @State var eventId: String
-    @State private var showShareSheet = false
     
     var body: some View {
         
@@ -46,7 +45,7 @@ struct EventDetailView: View {
                     
                     Button(action: {
                         
-                        self.showShareSheet = true
+                        self.viewModel.showShareSheet = true
                         
                     }) {
                         
@@ -58,7 +57,7 @@ struct EventDetailView: View {
                     
                     Button(action: {
                         
-                        self.viewModel.postCheckIn()
+                        self.viewModel.postCheckIn(id: self.eventId)
                         
                     }) {
                         
@@ -72,7 +71,7 @@ struct EventDetailView: View {
                             
                     }
                 }
-                .sheet(isPresented: $showShareSheet) {
+                .sheet(isPresented: $viewModel.showShareSheet) {
                     ShareSheet(activityItems: ["\(self.viewModel.event.title) \(self.viewModel.getFormattedDate())"])
                 }
                 
@@ -90,7 +89,7 @@ struct EventDetailView: View {
                     
                     Divider()
                     
-                    Text("People")
+                    Text("Going")
                         .font(.headline)
 
                     HStack() {
@@ -139,13 +138,12 @@ struct EventDetailView: View {
             
         }
         .onAppear {
-            self.getEvent(eventId: self.eventId)
+            self.viewModel.getEvent(id: self.eventId)
+        }
+        .alert(isPresented: $viewModel.error) {
+            return Alert(title: Text("Error"), message: Text(LocalizedStringKey(viewModel.errorMessage)))
         }
         .navigationBarTitle(Text(viewModel.event.title), displayMode: .inline)
-    }
-    
-    private func getEvent(eventId: String) {
-        viewModel.getEvent(id: eventId)
     }
     
     private func imageFromData(imageData: Data?) -> Image {

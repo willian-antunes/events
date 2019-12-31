@@ -16,6 +16,9 @@ class EventDetailViewModel: ObservableObject {
     @Published private(set) var event = EventDetailViewData()
     @Published private(set) var isLoading = true
     @Published private(set) var isPosting = true
+    @Published var showShareSheet = false
+    @Published var error = false
+    @Published private(set) var errorMessage = ""
     
     func getEvent(id: String) {
         
@@ -28,7 +31,10 @@ class EventDetailViewModel: ObservableObject {
         }
         
         let errorHandler: (String) -> Void = { (error) in
-            print(error)
+            DispatchQueue.main.async {
+                self.error = true
+                self.errorMessage = error
+            }
         }
         
         networkLayer.get(urlString: "https://5b840ba5db24a100142dcd8c.mockapi.io/api/events/\(id)", successHandler: successHandler, errorHandler: errorHandler)
@@ -60,8 +66,22 @@ class EventDetailViewModel: ObservableObject {
         
     }
     
-    func postCheckIn() {
+    func postCheckIn(id: String) {
+        
+        let errorHandler: (String) -> Void = { (error) in
+            DispatchQueue.main.async {
+                self.error = true
+                self.errorMessage = error
+            }
+        }
+        
+        guard let name = UserDefaults.standard.string(forKey: "name") else { return }
+        guard let email = UserDefaults.standard.string(forKey: "email") else { return }
+        
+        networkLayer.post(urlString: "https://5b840ba5db24a100142dcd8c.mockapi.io/api/checkin", body: CheckIn(eventId: id, name: name, email: email), errorHandler: errorHandler)
         
     }
     
 }
+
+

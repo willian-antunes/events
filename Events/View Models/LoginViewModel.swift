@@ -14,13 +14,13 @@ class LoginViewModel: ObservableObject {
     @Published var name = ""
     @Published var email = ""
     @Published var password = ""
+    @Published var goToEventList: Int? = 0
     
     func performLogin() {
-        if allFilled {
-            UserDefaults.standard.set(self.name, forKey: "name")
-            UserDefaults.standard.set(self.email, forKey: "email")
-            UserDefaults.standard.set(self.password, forKey: "password")
-        }
+        UserDefaults.standard.set(self.name, forKey: "name")
+        UserDefaults.standard.set(self.email, forKey: "email")
+        UserDefaults.standard.set(self.password, forKey: "password")
+        goToEventList = 1
     }
     
     var allFilled: Bool {

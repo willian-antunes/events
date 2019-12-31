@@ -13,6 +13,12 @@ struct LoginView: View {
     
     @ObservedObject var viewModel: LoginViewModel = LoginViewModel()
     
+    init() {
+        
+        UINavigationBar.appearance().tintColor = .systemPink
+        
+    }
+    
     var body: some View {
 
         NavigationView {
@@ -36,26 +42,26 @@ struct LoginView: View {
                 SecureField("Password", text: $viewModel.password)
                     .padding(.horizontal, 24)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    
+                Button(action: {
+                    
+                    self.viewModel.performLogin()
+                    
+                }) {
+                    
+                    Text("Login")
+                        .bold()
+                        .padding(.vertical, 12)
+                        .padding(.horizontal, 64)
+                        .background(self.viewModel.buttonColor)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                    
+                }
+                .disabled(!viewModel.allFilled)
                 
-                NavigationLink(destination: EventList()) {
-                    
-                    Button(action: {
-                        
-                        self.viewModel.performLogin()
-                        
-                    }) {
-                        
-                        Text("Login")
-                            .bold()
-                            .padding(.vertical, 12)
-                            .padding(.horizontal, 64)
-                            .background(self.viewModel.buttonColor)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
-                        
-                    }
-                    .disabled(viewModel.allFilled)
-                    
+                NavigationLink(destination: EventList(), tag: 1, selection: $viewModel.goToEventList) {
+                    EmptyView()
                 }
                 
                 Spacer()

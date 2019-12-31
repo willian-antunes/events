@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CoreLocation
 
 struct EventDetailViewData {
     
@@ -46,9 +45,4 @@ struct EventDetailViewData {
         self.cupons = []
     }
 
-}
-
-struct Coordinates: Hashable, Codable {
-    var latitude: Double
-    var longitude: Double
 }

@@ -24,6 +24,9 @@
 		7DA423B423B9D9D10076738B /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA423B323B9D9D10076738B /* ShareSheet.swift */; };
 		7DA423B723B9EFAB0076738B /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA423B623B9EFAB0076738B /* ActivityIndicator.swift */; };
 		7DA423B923B9F1E50076738B /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA423B823B9F1E50076738B /* CheckIn.swift */; };
+		7DA423BB23BB15AD0076738B /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA423BA23BB15AD0076738B /* Coordinates.swift */; };
+		7DA423BD23BB15CD0076738B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA423BC23BB15CD0076738B /* Person.swift */; };
+		7DA423BF23BB15FE0076738B /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA423BE23BB15FE0076738B /* Coupon.swift */; };
 		7DEE949923B7043A00CE8009 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE949823B7043900CE8009 /* AppDelegate.swift */; };
 		7DEE949B23B7043A00CE8009 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE949A23B7043A00CE8009 /* SceneDelegate.swift */; };
 		7DEE949D23B7043A00CE8009 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE949C23B7043A00CE8009 /* LoginView.swift */; };
@@ -51,6 +54,9 @@
 		7DA423B323B9D9D10076738B /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		7DA423B623B9EFAB0076738B /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		7DA423B823B9F1E50076738B /* CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
+		7DA423BA23BB15AD0076738B /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
+		7DA423BC23BB15CD0076738B /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		7DA423BE23BB15FE0076738B /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		7DEE949523B7043900CE8009 /* Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEE949823B7043900CE8009 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DEE949A23B7043A00CE8009 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,10 +103,13 @@
 		7DA423A323B957550076738B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7DA4239B23B86EFC0076738B /* EventViewData.swift */,
 				7DA4239923B86D3C0076738B /* Event.swift */,
+				7DA4239B23B86EFC0076738B /* EventViewData.swift */,
 				7DA423A923B958A20076738B /* EventDetail.swift */,
 				7DA423B123B970320076738B /* EventDetailViewData.swift */,
+				7DA423BC23BB15CD0076738B /* Person.swift */,
+				7DA423BE23BB15FE0076738B /* Coupon.swift */,
+				7DA423BA23BB15AD0076738B /* Coordinates.swift */,
 				7DA423B823B9F1E50076738B /* CheckIn.swift */,
 			);
 			path = Models;
@@ -245,6 +254,7 @@
 				7DA4239E23B8708F0076738B /* EventRow.swift in Sources */,
 				7DA423AC23B95A6C0076738B /* CircleImage.swift in Sources */,
 				7DA423B423B9D9D10076738B /* ShareSheet.swift in Sources */,
+				7DA423BF23BB15FE0076738B /* Coupon.swift in Sources */,
 				7DA423A823B958690076738B /* EventDetailViewModel.swift in Sources */,
 				7DEE949923B7043A00CE8009 /* AppDelegate.swift in Sources */,
 				7DA4239823B86D0A0076738B /* Network.swift in Sources */,
@@ -258,7 +268,9 @@
 				7DA423A023B952CE0076738B /* LoginViewModel.swift in Sources */,
 				7DA423B223B970320076738B /* EventDetailViewData.swift in Sources */,
 				7DA423B723B9EFAB0076738B /* ActivityIndicator.swift in Sources */,
+				7DA423BD23BB15CD0076738B /* Person.swift in Sources */,
 				7DEE949D23B7043A00CE8009 /* LoginView.swift in Sources */,
+				7DA423BB23BB15AD0076738B /* Coordinates.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

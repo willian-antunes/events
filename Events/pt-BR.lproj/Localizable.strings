@@ -6,7 +6,11 @@
   Copyright © 2019 Willian Antunes. All rights reserved.
 */
 
-"Username" = "Usuário";
+"Name" = "Nome";
 "Password" = "Senha";
 "Events" = "Eventos";
+"Error" = "Erro";
+"Something went wrong. Please try again later." = "Oops! Teste sua conexão e tente novamente!";
+"Going" = "Confirmados";
+"Coupons" = "Cupons";
 

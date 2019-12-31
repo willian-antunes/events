@@ -22,20 +22,3 @@ struct EventDetail: Codable {
     var cupons: [Coupon]
     
 }
-
-struct Person: Codable, Identifiable {
-    
-    var id: String
-    var eventId: String
-    var name: String
-    var picture: String
-    
-}
-
-struct Coupon: Codable, Identifiable {
-    
-    var id: String
-    var eventId: String
-    var discount: Int
-    
-}

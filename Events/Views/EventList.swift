@@ -14,21 +14,31 @@ struct EventList: View {
     
     var body: some View {
         
-        List(viewModel.events) { event in
-            NavigationLink(destination: EventDetailView(eventId: event.id)) {
-                EventRow(event: event)
+        VStack {
+            if !viewModel.isLoading {
+                
+                List(viewModel.events) { event in
+                    NavigationLink(destination: EventDetailView(eventId: event.id)) {
+                        EventRow(event: event)
+                    }
+                }
+                
+            } else {
+                
+                ActivityIndicator(isAnimating: $viewModel.isLoading, style: .medium)
+                
             }
         }
         .navigationBarTitle("Events")
         .navigationBarBackButtonHidden(true)
         .onAppear {
-            self.getEvents()
+            self.viewModel.getEvents()
+        }
+        .alert(isPresented: $viewModel.error) {
+            return Alert(title: Text("Error"), message: Text(LocalizedStringKey(viewModel.errorMessage)))
         }
     }
-    
-    private func getEvents() {
-        viewModel.getEvents()
-    }
+
 }
 
 struct EventList_Previews: PreviewProvider {

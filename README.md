@@ -1,10 +1,10 @@
-![Alt text](https://imgur.com/5bK4t58)
+![Alt text](https://imgur.com/5bK4t58.png)
 
 # Events
 
 This is an app developed as an exam for the iOS Developer position at Woop Sicredi.
 
-![Alt text](https://imgur.com/cObGn8I)
+![Alt text](https://imgur.com/cObGn8I.png)
 
 The app uses only native frameworks. In order to run, simply clone/download and use the latest version of Xcode.
 

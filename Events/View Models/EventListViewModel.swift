@@ -37,7 +37,7 @@ class EventListViewModel: ObservableObject {
             }
         }
         
-        networkLayer.get(urlString: "https://5b840ba5db24a100142dcd8c.mockapi.io/api/events", successHandler: successHandler, errorHandler: errorHandler)
+        networkLayer.get(urlString: "http://5b840ba5db24a100142dcd8c.mockapi.io/api/events", successHandler: successHandler, errorHandler: errorHandler)
     }
     
 }

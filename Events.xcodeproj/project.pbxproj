@@ -27,7 +27,6 @@
 		7DA423BB23BB15AD0076738B /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA423BA23BB15AD0076738B /* Coordinates.swift */; };
 		7DA423BD23BB15CD0076738B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA423BC23BB15CD0076738B /* Person.swift */; };
 		7DA423BF23BB15FE0076738B /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA423BE23BB15FE0076738B /* Coupon.swift */; };
-		7DB8F49A23BF37E1006AD8DA /* README.me in Resources */ = {isa = PBXBuildFile; fileRef = 7DB8F49923BF37E1006AD8DA /* README.me */; };
 		7DB8F49C23BF3A48006AD8DA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7DB8F49B23BF3A48006AD8DA /* .gitignore */; };
 		7DEE949923B7043A00CE8009 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE949823B7043900CE8009 /* AppDelegate.swift */; };
 		7DEE949B23B7043A00CE8009 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE949A23B7043A00CE8009 /* SceneDelegate.swift */; };
@@ -59,7 +58,6 @@
 		7DA423BA23BB15AD0076738B /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		7DA423BC23BB15CD0076738B /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		7DA423BE23BB15FE0076738B /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
-		7DB8F49923BF37E1006AD8DA /* README.me */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.me; sourceTree = "<group>"; };
 		7DB8F49B23BF3A48006AD8DA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7DEE949523B7043900CE8009 /* Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEE949823B7043900CE8009 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				7DB8F49B23BF3A48006AD8DA /* .gitignore */,
-				7DB8F49923BF37E1006AD8DA /* README.me */,
 				7DEE949723B7043900CE8009 /* Events */,
 				7DEE949623B7043900CE8009 /* Products */,
 			);
@@ -241,7 +238,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DB8F49A23BF37E1006AD8DA /* README.me in Resources */,
 				7DEE94A523B7043D00CE8009 /* LaunchScreen.storyboard in Resources */,
 				7DA4238F23B8496B0076738B /* Localizable.strings in Resources */,
 				7DEE94A223B7043D00CE8009 /* Preview Assets.xcassets in Resources */,
